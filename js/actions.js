@@ -3,15 +3,18 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
     init: function(){
+        //funcionalidades para el registro
         if(!fn.estaRegistrado())
             window.location.href = '#registro';
         // -- MANDO A LLAMAR EL BOTON QUE ESTA DENTRO DEL DIV ---
-        $('#registro div[data-role=footer] a').click(fn.registrar);
+        $('#registro div[data-role=footer] a').tap(fn.registrar);
         // -- MANDO A LLAMAR EL BOTON QUE ESTA DENTRO DEL DIV ---
 		
 		// -- MANDO A LLAMAR EL BOTON TOMAR FOTO --
 		$('#tomarFoto').click(capture.takePhoto);
 		// -- MANDO A LLAMAR EL BOTON TOMAR FOTO --
+        //funcionalidades para reserva
+        $('#nr1 div[data-role=navbar] a:eq(0)').tap(fn.siguientePaso);
             },
     // --- FUNCIONES DE REGISTRO ---
     estaRegistrado: function(){
@@ -56,8 +59,12 @@ var fn = {
         }else
             alert('Todos Los Campos Son Requeridos');        
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
-    }
+    },
     
-    // --- FUNCIONES DE REGISTRO ---
+    // --- FUNCIONES DE reserva ---
+    siguientePaso: function(){
+        
+        alert("hora!!");
+    }
 };    
 $(fn.ready);
