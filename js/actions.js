@@ -15,6 +15,8 @@ var fn = {
 		// -- MANDO A LLAMAR EL BOTON TOMAR FOTO --
         //funcionalidades para reserva
         $('#nr1 div[data-role=navbar] a:eq(0)').tap(fn.siguientePaso);
+        $('#nr2 ul[data-role=listview] a').tap(fn.SeleccionaHabitacion);
+        $('#nr2 div[data-role=navbar] a:eq(0)').tap(fn.obtenerReserva);
             },
     // --- FUNCIONES DE REGISTRO ---
     estaRegistrado: function(){
@@ -62,9 +64,34 @@ var fn = {
     },
     
     // --- FUNCIONES DE reserva ---
+    per: '',
+    dia: '',
+    th: '',
     siguientePaso: function(){
-        
-        alert("hora!!");
-    }
+        fn.per = $('#nrPer').val();
+        fn.dia = $('#nrDia').val();
+        if(fn.Per != '' && fn.dia != '')
+            window.location.href="#nr2";
+        else
+            navigator.notification.alert("TOdos los campos son requeridos",null,"Error al llenar","Aceptar");
+    },
+    SeleccionaHabitacion: function(){
+      $(this).parent().parent().find('a').css('background-color','transparent');  
+      $(this).css('background-color','green');
+        fn.th =$(this).parent().index();
+        alert(fn.th);
+    },
+        obtenerReserva: function(){
+            if(fn.th != ''){
+                if(navigator.connection.type != Connection.NONE)
+                    //enviar al servidor
+                    else
+                        //guardar localmente
+            }
+            else{               
+                navigator.notification.alert("Debe seleccionar tipo de habitacion",null,"Error al llenar","Aceptar");
+            }
+                
+        }
 };    
 $(fn.ready);
