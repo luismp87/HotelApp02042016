@@ -33,8 +33,7 @@ var fn = {
         
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
         if(nom != '' && mail != '' && tel != '' && foto != undefined){
-            $.mobile.loading("show",{
-                
+            $.mobile.loading("show",{                
                 theme:'b'
             });
             
