@@ -38,7 +38,7 @@ var fn = {
                 theme:'b'
             });
             
-        }
+        
            $.ajax({
 			  method: "POST",
 			  url: "http://carlos.igitsoft.com/apps/test.php",
@@ -54,7 +54,7 @@ var fn = {
 					ft.transfer(foto);
 				}
 			});
-        else
+        }else
             alert('Todos Los Campos Son Requeridos');        
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
     }
