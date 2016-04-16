@@ -7,7 +7,7 @@
 
     <!-- versionCode is optional and Android only -->
 
-        <preference name="phonegap-version" value"3.7.0"/>
+        
     <name>HotelApp1</name>
 
     <description>
@@ -18,7 +18,7 @@
         Orlando Vazquez
     </author>
 
-		<icon src="icon.png"/>
+		<preference name="phonegap-version" value"3.7.0"/>
         
         <gap:plugin name="org.apache.cordova.dialogs"/>
 	    <gap:plugin name="org.apache.cordova.media-capture"/>
