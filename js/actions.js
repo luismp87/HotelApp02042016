@@ -32,7 +32,13 @@ var fn = {
         // -- SE OBTIENE VALORES DE CAMPOS --
         
         // -- COMPROBAMOS SI LOS CAMPOS NO ESTAN VACIOS --
-        if(nom != '' && mail != '' && tel != '' && foto != undefined)
+        if(nom != '' && mail != '' && tel != '' && foto != undefined){
+            $.mobile.loading("show",{
+                
+                theme:'b'
+            });
+            
+        }
            $.ajax({
 			  method: "POST",
 			  url: "http://carlos.igitsoft.com/apps/test.php",
