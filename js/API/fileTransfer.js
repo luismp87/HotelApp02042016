@@ -19,4 +19,5 @@ var ft = {
         var ft2 = new FIleTransfer();
 		ft2.upload(fileURL, "http://carlos.igitsoft.com/apps/test.php", ft.win, ft.fail, options);
 	}
-};
+}
+;
