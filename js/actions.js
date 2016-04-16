@@ -79,14 +79,14 @@ var fn = {
       $(this).parent().parent().find('a').css('background-color','transparent');  
       $(this).css('background-color','green');
         fn.th =$(this).parent().index();
-        alert(fn.th);
+        //alert(fn.th);
     },
         obtenerReserva: function(){
             if(fn.th != ''){
                 if(navigator.connection.type != Connection.NONE)
-                    //enviar al servidor
+                   navigator.notification.alert("Envia servidro",null,"Error al llenar","Aceptar");
                     else
-                        //guardar localmente
+                        navigator.notification.alert("Guarda localmente",null,"Error al llenar","Aceptar");
             }
             else{               
                 navigator.notification.alert("Debe seleccionar tipo de habitacion",null,"Error al llenar","Aceptar");
