@@ -8,7 +8,7 @@ var almacen = {
         alamcen.di = di;
         alamcen.th = th;
         almacen.db = window.openDatabase("hotelApp","1.0","HotelApp Storage",20000);
-        almacen.db.transaction(almacen.hacerReserva,almacen.error, almacen.guardarReserva);
+        almacen.db.transaction(almacen.hacerReserva,almacen.error, almacen.reservaGuardada);
         
     },
     hacerReserva: function(tx)
@@ -16,7 +16,7 @@ var almacen = {
         tx.executeSql("CREATE TABLE IF NOT EXISTS reservas (pr,di,th)");
         tx.executeSql("INSERT INTO reservas (pr,di,th) VALUES ('"+almacen.pr+"','"+almacen.di+"','"+almacen.th+"')");         
     },
-    error: Function()
+    error: function()
     {
         alert("Error al acceder a la base de datos");  
     },
