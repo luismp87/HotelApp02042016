@@ -86,7 +86,8 @@ var fn = {
                 if(navigator.connection.type != Connection.NONE)
                    navigator.notification.alert("Envia servidro",null,"Error al llenar","Aceptar");
                     else
-                        navigator.notification.alert("Guarda localmente",null,"Error al llenar","Aceptar");
+                        almacen.guardarReserva(fn.per,fn.dia,fn.th);
+                        //navigator.notification.alert("Guarda localmente",null,"Error al llenar","Aceptar");
             }
             else{               
                 navigator.notification.alert("Debe seleccionar tipo de habitacion",null,"Error al llenar","Aceptar");
