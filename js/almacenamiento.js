@@ -69,5 +69,5 @@ var almacen = {
         },"Tabla historial Reservas","Vibrar,Sonar,Cancelar");
        }
        });
- },
+ }
 }
