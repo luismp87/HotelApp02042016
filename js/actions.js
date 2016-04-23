@@ -85,6 +85,7 @@ var fn = {
             if(fn.th != ''){
                 if(navigator.connection.type != Connection.NONE)
                         server.sincronizar(fn.per, fn.dia, fn.th);
+                        almacen.guardarHistorialReserva(fn.per,fn.dia,fn.th);
                     else
                         almacen.guardarReserva(fn.per,fn.dia,fn.th);
                         //navigator.notification.alert("Guarda localmente",null,"Error al llenar","Aceptar");
