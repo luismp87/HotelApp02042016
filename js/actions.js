@@ -94,6 +94,6 @@ var fn = {
                 navigator.notification.alert("Debe seleccionar tipo de habitacion",null,"Error al llenar","Aceptar");
             }
                 
-        }
+    }
 };    
 $(fn.ready);
