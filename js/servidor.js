@@ -11,10 +11,10 @@ var server = {
               navigator.notification.alert("Reserva guardada en espera de sincronización",null, "Error", "Aceptar");
                
            }
-			}).done(server.sincronizar);
+			}).done(server.sincronizado);
     },
     sincronizado: function(msg){
-        (if == 1 )
+        if(msg == 1 )
         {
              navigator.notification.alert("Sincrinizado",null, "Error", "Aceptar");
         }
