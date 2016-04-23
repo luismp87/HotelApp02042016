@@ -28,7 +28,7 @@ var almacen = {
     {
         almacen.db.trasaction(almacen.consultaReserva, almacen.error,null);
     },
-        consultaReserva: function(tx)
+    consultaReservas: function(tx)
     {
         tx.executeSql("SELECT * FROM reservas",[],function(tx2,tabla)
         {
@@ -40,9 +40,9 @@ var almacen = {
                                                   function(btn)
                                                    {
                                                         if(btn == 1)  navigator.vibrate(500);
-                                                        if(btn == 1)  navigator.notification.beep(1)
+                                                        if(btn == 2)  navigator.notification.beep(1)
                                                     },"tabla reserva","Vibrar, Sonar, Cancelar ");
                 }
-        }
+        });
     }
 }
