@@ -12,6 +12,6 @@ var capture = {
         navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error','Perfecto!');
     },
     takePhoto: function(){
-        navigator.device.capture.captureImage(capture.success, capture.captureError, {limit:2});
+        navigator.device.capture.captureImage(capture.success, capture.captureError, {limit:1});
     }
 }
