@@ -70,6 +70,7 @@ var fn = {
     dia: '',
     th: '',
     siguientePaso: function(){
+        navigator.notification.alert("hola ss",null,"Error al llenar","Aceptar");
         fn.per = $('#nrPer').val();
         fn.dia = $('#nrDia').val();
         if(fn.Per != '' && fn.dia != '')

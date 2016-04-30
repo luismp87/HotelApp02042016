@@ -2,7 +2,7 @@ var almacen = {
  pr: null,
  di: null,
  th: null,
- guardarReserva : function(pr,di,th){
+ guardarReserva: function(pr,di,th){
   almacen.pr = pr;
   almacen.di = di;
   almacen.th = th;
@@ -17,7 +17,7 @@ var almacen = {
  error: function(){
   alert("Error al acceder a la Base de Datos");
  },
- reservaGuardada : function(){
+ reservaGuardada: function(){
   navigator.notification.alert("Reserva guardada en espera de sincronización",/*almacen.leerReservas*/null, "Felicidades", "Aceptar");
  },
  leerReservas: function(){
@@ -42,7 +42,7 @@ var almacen = {
     },
     
     ////TABLA PARA HISTORIAL
-  guardarHistorialReserva : function(pr,di,th){
+  guardarHistorialReserva: function(pr,di,th){
   almacen.pr = pr;
   almacen.di = di;
   almacen.th = th;
