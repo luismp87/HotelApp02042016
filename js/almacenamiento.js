@@ -56,5 +56,22 @@ var almacen = {
 	},
 	historialGuardado: function(){
 		navigator.notification.alert("Guardado en Historial", null, "Felicidades", "Aceptar");
+	},
+    	
+    
+    
+    mostrarHistorial: function(tx){
+		tx.executeSql("SELECT * FROM reservas", [], function(tx2, t){
+			for(i = 0; i < t.rows.length; i++){
+				/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
+											   + "Días: " + t.rows.item(i).di + "\n"
+											   + "Tipo de Habitación: " + t.rows.item(i).th,
+											  function(btn){
+												  if(btn == 1) navigator.vibrate(500);
+												  if(btn == 2) navigator.notification.beep(1);
+											  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
+				server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
+			}
+		});
 	}
 }
