@@ -18,7 +18,7 @@ var almacen = {
   alert("Error al acceder a la Base de Datos");
  },
  reservaGuardada : function(){
-  navigator.notification.alert("Reserva guardada en espera de sincronización",almacen.leerReservas, "Felicidades", "Aceptar");
+  navigator.notification.alert("Reserva guardada en espera de sincronización",/*almacen.leerReservas*/null, "Felicidades", "Aceptar");
  },
  leerReservas: function(){
   almacen.db.transaction(almacen.consultaReservas,almacen.error,null);
@@ -27,14 +27,19 @@ var almacen = {
  consultaReservas: function(tx){
   tx.executeSql("SELECT * FROM reservas", [], function(tx2, t){
        for(i = 0; i < t.rows.length; i++){
-        navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n" + "Dias: " + t.rows.item(i).di + "\n" + "Tipo de Habitación: " + t.rows.item(i).th,
+        /*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n" + "Dias: " + t.rows.item(i).di + "\n" + "Tipo de Habitación: " + t.rows.item(i).th,
               function(btn){
          if(btn == 1) navigator.vibrate(1000);
          if(btn == 2) navigator.notification.beep(1);
-        },"Tabla Reservas","Vibrar,Sonar,Cancelar");
+        },"Tabla Reservas","Vibrar,Sonar,Cancelar");*/
+           server.sincronizar(tabla.rows.ites(i).pr,tabla.rows.item(i).di,tabla.rows.item(i).th)
        }
        });
  },
+    eliminarReserva: function(tx)
+    {
+        tx.executeSql("DELETE FROM reservas WHERE pr = '"+almacen.pr+"' and di = '"+almacen.di+"' and th = '"+almacen.th+"' ")
+    },
     
     ////TABLA PARA HISTORIAL
   guardarHistorialReserva : function(pr,di,th){

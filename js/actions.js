@@ -17,6 +17,8 @@ var fn = {
         $('#nr1 div[data-role=navbar] a:eq(0)').tap(fn.siguientePaso);
         $('#nr2 ul[data-role=listview] a').tap(fn.SeleccionaHabitacion);
         $('#nr2 div[data-role=navbar] a:eq(0)').tap(fn.obtenerReserva);
+        //sincronizacion automTICA CUANDO SE CONECTE A INTERNET
+        document.addEventListener("online",almacen.leerReservas,false);
             },
     // --- FUNCIONES DE REGISTRO ---
     estaRegistrado: function(){
